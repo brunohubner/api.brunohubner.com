@@ -32,6 +32,7 @@ export class EtherealMailProvider implements MailProvider {
             html
         })
 
+        // eslint-disable-next-line no-console
         console.log("Nodemailer URL: %s", nodemailer.getTestMessageUrl(message))
     }
 }
