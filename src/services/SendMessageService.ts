@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
 import { MailProvider } from "../interfaces/MailProvider"
 import { env } from "../config/env"
 import { AppError } from "../errors/AppError"
 import { inject, injectable } from "tsyringe"
+import { getMailProvider } from "@/containers/getMailProvider"
 
 @injectable()
 export class SendMessageService {
     constructor(
-        @inject("MailProvider")
+        @inject(getMailProvider())
         private readonly mailProvider: MailProvider
     ) {}
 

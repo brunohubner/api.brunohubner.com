@@ -3,5 +3,6 @@ export const env = {
     backendUrl: process.env.BACKEND_URL || "http://localhost:3333",
     privateEmail: process.env.PRIVATE_EMAIL || "",
     publicEmail: process.env.PUBLIC_EMAIL || "",
-    sendGridApiKey: process.env.SENDGRID_API_KEY || ""
+    sendGridApiKey: process.env.SENDGRID_API_KEY || "",
+    mailProvider: process.env.MAIL_PROVIDER || "ethereal"
 }
