@@ -1,0 +1,46 @@
+{
+    "name": "api.brunohubner.com",
+    "version": "1.0.0",
+    "author": "Bruno Hubner <brunohubnerdev@gmail.com>",
+    "private": "true",
+    "scripts": {
+        "build": "rimraf dist && tsc -p tsconfig-build.json",
+        "start": "node dist/server.js",
+        "start:local": "yarn build && yarn start",
+        "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+        "lint": "eslint src --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "prettier:fix": "prettier --write src"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@sendgrid/mail": "^7.6.1",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.2",
+        "module-alias": "^2.2.2",
+        "nodemailer": "^6.7.2"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.12",
+        "@types/express": "^4.17.13",
+        "@types/module-alias": "^2.0.1",
+        "@types/node": "^17.0.17",
+        "@types/nodemailer": "^6.4.4",
+        "@typescript-eslint/eslint-plugin": "^5.11.0",
+        "@typescript-eslint/parser": "^5.11.0",
+        "eslint": "^8.9.0",
+        "git-commit-msg-linter": "^4.0.7",
+        "prettier": "^2.5.1",
+        "rimraf": "^3.0.2",
+        "ts-node-dev": "^1.1.8",
+        "tsconfig-paths": "^3.12.0",
+        "typescript": "^4.5.5"
+    },
+    "engines": {
+        "node": "16"
+    },
+    "_moduleAliases": {
+        "@": "dist"
+    }
+}
