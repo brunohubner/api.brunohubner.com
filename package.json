@@ -10,7 +10,14 @@
         "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/server.ts",
         "lint": "eslint src --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
-        "prettier:fix": "prettier --write src"
+        "prettier:fix": "prettier --write src",
+        "test:base": "jest --passWithNoTests --forceExit --runInBand --no-cache",
+        "test:unit": "yarn test:base -- -c jest-unit-config.js",
+        "test:integration": "yarn test:base -- -c jest-integration-config.js",
+        "test:staged": "yarn test:base --findRelatedTests tests",
+        "test:ci": "yarn test:base -- --coverage",
+        "test:coveralls": "yarn test:ci && coveralls < coverage/lcov.info",
+        "test": "yarn test:unit && yarn test:integration"
     },
     "license": "ISC",
     "dependencies": {
