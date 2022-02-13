@@ -17,13 +17,13 @@ export class SendMessageService {
 
         try {
             await this.mailProvider.sendMail({
-                to: {
-                    name: "Bruno Hubner",
-                    email: env.privateEmail
-                },
                 from: {
                     name: "brunohubner.com",
-                    email: env.publicEmail
+                    email: env.PUBLIC_EMAIL
+                },
+                to: {
+                    name: "Bruno Hubner",
+                    email: env.PRIVATE_EMAIL
                 },
                 subject: "Nova mensagem",
                 data: message

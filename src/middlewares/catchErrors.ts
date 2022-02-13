@@ -3,7 +3,7 @@ import { AppError } from "../errors/AppError"
 import { logError } from "../errors/logError"
 import { logErrorConditional } from "../errors/logErrorHere"
 
-export function errorMiddleware(
+export function catchErrors(
     error: Error,
     req: Request,
     res: Response,

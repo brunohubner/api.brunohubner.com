@@ -1,7 +1,7 @@
 import { env } from "../config/env"
 
 const mailProvider =
-    env.mailProvider === "sendgrid"
+    env.MAIL_PROVIDER === "sendgrid"
         ? "SendGridMailProvider"
         : "EtherealMailProvider"
 

@@ -1,11 +1,11 @@
 import "dotenv/config"
 
 export const env = {
-    port: process.env.PORT || 3333,
-    backendUrl: process.env.BACKEND_URL || "http://localhost:3333",
-    privateEmail: process.env.PRIVATE_EMAIL || "",
-    publicEmail: process.env.PUBLIC_EMAIL || "",
-    sendGridApiKey: process.env.SENDGRID_API_KEY || "",
-    mailProvider: process.env.MAIL_PROVIDER || "ethereal",
-    NODE_ENV: process.env.NODE_ENV || "ethereal"
+    PORT: process.env.PORT || 3333,
+    BACKEND_URL: process.env.BACKEND_URL || "http://localhost:3333",
+    PRIVATE_EMAIL: process.env.PRIVATE_EMAIL || "",
+    PUBLIC_EMAIL: process.env.PUBLIC_EMAIL || "",
+    SENDGRID_API_KEY: process.env.SENDGRID_API_KEY || "",
+    MAIL_PROVIDER: process.env.MAIL_PROVIDER || "ethereal",
+    NODE_ENV: process.env.NODE_ENV || "development"
 }

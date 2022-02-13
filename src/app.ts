@@ -4,7 +4,7 @@ import "@/containers"
 import express from "express"
 import cors from "cors"
 import { routes } from "./routes"
-import { errorMiddleware } from "@/middlewares/errorMiddleware"
+import { catchErrors } from "@/middlewares/catchErrors"
 import { rateLimiter } from "@/middlewares/rateLimiter"
 
 const app = express()
@@ -14,6 +14,6 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(rateLimiter)
 app.use(routes)
-app.use(errorMiddleware)
+app.use(catchErrors)
 
 export { app }

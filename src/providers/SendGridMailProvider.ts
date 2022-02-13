@@ -7,7 +7,7 @@ import sgMail from "@sendgrid/mail"
 export class SendGridMailProvider implements MailProvider {
     async sendMail({ data, from, subject, to }: SendMailData): Promise<void> {
         try {
-            sgMail.setApiKey(env.sendGridApiKey)
+            sgMail.setApiKey(env.SENDGRID_API_KEY)
 
             const message = {
                 from: `${from.name} <${from.email}>`,
