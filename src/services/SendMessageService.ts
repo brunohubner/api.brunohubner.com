@@ -27,7 +27,7 @@ export class SendMessageService {
         let ipInfo: IpInfoData = { address: "", internetProvider: "" }
 
         try {
-            ipInfo = await this.ipInfoProvider.info("179.107.126.150")
+            ipInfo = await this.ipInfoProvider.info(ip)
         } catch {
             //
         }
