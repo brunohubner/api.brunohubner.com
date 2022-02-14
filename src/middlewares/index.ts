@@ -5,9 +5,7 @@ import { catchErrors } from "./catchErrors"
 import { rateLimiter } from "./rateLimiter"
 import { env } from "../config/env"
 
-const origin: string[] = [
-    ...[env.CORS_CLOSED === true ? env.FRONTEND_URL : "*"]
-]
+const origin = env.CORS_CLOSED === true ? [env.FRONTEND_URL] : "*"
 
 const middlewares = Router()
 
