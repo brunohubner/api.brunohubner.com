@@ -7,5 +7,6 @@ export const env = {
     PUBLIC_EMAIL: process.env.PUBLIC_EMAIL || "",
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY || "",
     MAIL_PROVIDER: process.env.MAIL_PROVIDER || "ethereal",
-    NODE_ENV: process.env.NODE_ENV || "development"
+    NODE_ENV: process.env.NODE_ENV || "development",
+    IP_INFO_PROVIDER: process.env.IP_INFO_PROVIDER || "mock"
 }

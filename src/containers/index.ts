@@ -1,3 +1,5 @@
+import { IpInfoProvider } from "@/interfaces/IpInfoProvider"
+import { IpInfoFinderProvider } from "@/providers/IpInfoFinderProvider"
 import { container } from "tsyringe"
 import { MailProvider } from "../interfaces/MailProvider"
 import { EtherealMailProvider } from "../providers/EtherealMailProvider"
@@ -11,4 +13,9 @@ container.registerSingleton<MailProvider>(
 container.registerSingleton<MailProvider>(
     "SendGridMailProvider",
     SendGridMailProvider
+)
+
+container.registerSingleton<IpInfoProvider>(
+    "IpInfoFinderProvider",
+    IpInfoFinderProvider
 )

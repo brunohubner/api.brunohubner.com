@@ -6,7 +6,7 @@ export function createHTMLEmailMessage(data: string): string {
         </style>
 
         <div class="message-content">
-            <p>${data}</p>
+            ${data}
         </div>
     `
 }
