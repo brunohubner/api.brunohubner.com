@@ -10,5 +10,5 @@ export const env = {
     MAIL_PROVIDER: process.env.MAIL_PROVIDER || "ethereal",
     NODE_ENV: process.env.NODE_ENV || "development",
     IP_INFO_PROVIDER: process.env.IP_INFO_PROVIDER || "mock",
-    CORS_CLOSED: process.env.CORS_CLOSED || false
+    CORS_CLOSED: process.env.CORS_CLOSED ? true : false
 }
