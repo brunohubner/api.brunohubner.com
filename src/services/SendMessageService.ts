@@ -4,9 +4,6 @@ import { env } from "../config/env"
 import { AppError } from "../errors/AppError"
 import { inject, injectable } from "tsyringe"
 import { getMailProvider } from "@/containers/getMailProvider"
-import { getIpInfoProvider } from "@/containers/getIpInfoProvider"
-import { IpInfoProvider } from "../interfaces/IpInfoProvider"
-import { IpInfoData } from "@/interfaces/IpInfoData"
 
 interface SendMessageServiceData {
     message: string
@@ -17,28 +14,12 @@ interface SendMessageServiceData {
 export class SendMessageService {
     constructor(
         @inject(getMailProvider())
-        private readonly mailProvider: MailProvider,
-        @inject(getIpInfoProvider())
-        private readonly ipInfoProvider: IpInfoProvider
+        private readonly mailProvider: MailProvider
     ) {}
 
-    async execute({ message, ip }: SendMessageServiceData): Promise<void> {
+    async execute({ message }: SendMessageServiceData): Promise<void> {
         if (!message.trim()) throw new AppError("Message is missing.")
-        let ipInfo: IpInfoData = { address: "", internetProvider: "" }
-
-        try {
-            ipInfo = await this.ipInfoProvider.info(ip)
-        } catch {
-            //
-        }
-
-        const email = `
-            <p>${message}</p>
-            <br/><br/><br/>
-            <p>${ipInfo.address}</p>
-            <p>Provider: ${ipInfo.internetProvider}</p>
-            <p>IP: ${ip}</p>
-        `
+        const email = `<p>${message}</p>`
 
         try {
             await this.mailProvider.sendMail({

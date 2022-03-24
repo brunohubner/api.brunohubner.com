@@ -8,5 +8,5 @@ const ipInfoProvider =
         : "MockIpInfoProvider"
 
 export function getIpInfoProvider(): string {
-    return ipInfoProvider
+    return "MockIpInfoProvider"
 }
