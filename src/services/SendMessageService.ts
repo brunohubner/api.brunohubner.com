@@ -7,6 +7,7 @@ import { getMailProvider } from "@/containers/getMailProvider"
 
 interface SendMessageServiceData {
     message: string
+    address: string
     ip: string
 }
 
@@ -17,19 +18,37 @@ export class SendMessageService {
         private readonly mailProvider: MailProvider
     ) {}
 
-    async execute({ message }: SendMessageServiceData): Promise<void> {
-        if (!message.trim()) throw new AppError("Message is missing.")
-        const email = `<p>${message}</p>`
+    async execute(data: SendMessageServiceData): Promise<void> {
+        if (!data) {
+            throw new AppError(`Attribute data is missing.`)
+        }
+
+        data.message = data.message || ""
+        data.address = data.address || ""
+        data.ip = data.ip || ""
+
+        for (const [key, value] of Object.entries(data)) {
+            if (!value.trim()) {
+                throw new AppError(`Attribute ${key} is missing.`)
+            }
+        }
+
+        const email = `
+            <p>${data.message}</p>
+            <br/><br/><br/><br/><br/><br/><br/>
+            <p>${data.address}</p>
+            <p>IP: ${data.ip}</p>
+        `
 
         try {
             await this.mailProvider.sendMail({
                 from: {
                     name: "brunohubner.com",
-                    email: env.PUBLIC_EMAIL
+                    email: env.SENDGRID_EMAIL_FROM
                 },
                 to: {
                     name: "Bruno Hubner",
-                    email: env.PRIVATE_EMAIL
+                    email: env.SENDGRID_EMAIL_TO
                 },
                 subject: "Nova mensagem",
                 data: email
