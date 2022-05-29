@@ -26,10 +26,16 @@ export class SendMessageService {
         }
 
         const email = `
-            <p>${data.message}</p>
-            <br/><br/><br/><br/><br/><br/><br/>
-            <p>${data.address}</p>
-            <p>IP: ${data.ip}</p>
+            <p style="margin: 0; margin-bottom: 56px; font-weight: 500; color: #5d615d; font-size: 18px;">
+                ${data.message}
+            </p>
+            <br /><br /><br /><br /><br />
+            <p style="width: 100%; text-align: center; color: #5d615d; font-size: 14px; margin: 0; margin-top: 24px;">
+                ${data.address}
+            </p>
+            <p style="width: 100%; text-align: center; color: #5d615d; font-size: 14px; margin: 0; margin-top: 24px;">
+                IP: ${data.ip}
+            </p>
         `
 
         try {
