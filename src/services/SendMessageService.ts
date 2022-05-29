@@ -19,14 +19,6 @@ export class SendMessageService {
     ) {}
 
     async execute(data: SendMessageServiceData): Promise<void> {
-        if (!data) {
-            throw new AppError(`Attribute data is missing.`)
-        }
-
-        data.message = data.message || ""
-        data.address = data.address || ""
-        data.ip = data.ip || ""
-
         for (const [key, value] of Object.entries(data)) {
             if (!value.trim()) {
                 throw new AppError(`Attribute ${key} is missing.`)
