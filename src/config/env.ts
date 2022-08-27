@@ -9,5 +9,6 @@ export const env = {
     SENDGRID_API_KEY: process.env.SENDGRID_API_KEY || "",
     MAIL_PROVIDER: process.env.MAIL_PROVIDER || "ethereal",
     NODE_ENV: process.env.NODE_ENV || "development",
-    CORS_CLOSED: process.env.CORS_CLOSED ? true : false
+    CORS_CLOSED: process.env.CORS_CLOSED ? true : false,
+    API_KEY: process.env.API_KEY || ""
 }
