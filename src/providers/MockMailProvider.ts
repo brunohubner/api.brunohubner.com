@@ -1,5 +1,5 @@
-import { MailProvider } from "../interfaces/MailProvider"
+import { MailProvider } from '../interfaces/MailProvider';
 
 export class MockMailProvider implements MailProvider {
-    async sendMail(): Promise<void> {}
+  async sendMail(): Promise<void> {}
 }

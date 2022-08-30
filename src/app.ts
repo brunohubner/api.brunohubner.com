@@ -1,11 +1,11 @@
-import "reflect-metadata"
-import "express-async-errors"
-import "@/containers"
-import express from "express"
-import { middlewares } from "./middlewares"
+import 'reflect-metadata';
+import 'express-async-errors';
+import '@/containers';
+import express from 'express';
+import { middlewares } from './middlewares';
 
-const app = express()
+const app = express();
 
-app.use(middlewares)
+app.use(middlewares);
 
-export { app }
+export { app };

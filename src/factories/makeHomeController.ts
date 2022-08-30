@@ -1,5 +1,5 @@
-import { HomeController } from "../controllers/HomeController"
+import { HomeController } from '../controllers/HomeController';
 
 export function makeHomeController(): HomeController {
-    return new HomeController()
+  return new HomeController();
 }

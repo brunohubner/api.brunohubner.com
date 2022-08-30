@@ -1,5 +1,5 @@
-import "reflect-metadata"
-import "express-async-errors"
-import "@/containers"
+import 'reflect-metadata';
+import 'express-async-errors';
+import '@/containers';
 
-jest.setTimeout(30000)
+jest.setTimeout(30000);
